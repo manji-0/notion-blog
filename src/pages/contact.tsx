@@ -34,10 +34,10 @@ const contacts = [
 
 export default () => (
   <>
-    <Header titlePre="Contact" />
+    <Header titlePre="manji0" />
     <div className={sharedStyles.layout}>
       <div className={contactStyles.avatar}>
-        <img src="/avatar.jpg" alt="avatar with Wataru Manji" height={60} />
+        <img src="/avatar.png" alt="avatar with Wataru Manji" height={60} />
       </div>
 
       <h1 style={{ marginTop: 0 }}>Contact</h1>
