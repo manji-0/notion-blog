@@ -229,6 +229,9 @@ const RenderPost = ({ post, redirect, preview }) => {
           }
 
           switch (type) {
+            case 'collection_view':
+            case 'bookmark':
+            case 'table_of_contents':
             case 'page':
             case 'divider':
               break
