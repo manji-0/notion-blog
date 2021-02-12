@@ -5,10 +5,8 @@ import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Home', page: '/' },
+  { label: 'Profile', page: '/' },
   { label: 'Blog', page: '/blog' },
-  { label: 'Contact', page: '/contact' },
-  { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
 
 const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
@@ -19,14 +17,14 @@ export default ({ titlePre = '' }) => {
   return (
     <header className={styles.header}>
       <Head>
-        <title>{titlePre ? `${titlePre} |` : ''} My Notion Blog</title>
+        <title>{titlePre ? `${titlePre} |` : ''} manji0</title>
         <meta
           name="description"
-          content="An example Next.js site using Notion for the blog"
+          content="manji0's profile, blog, and contact"
         />
-        <meta name="og:title" content="My Notion Blog" />
+        <meta name="og:title" content="manji0" />
         <meta property="og:image" content={ogImageUrl} />
-        <meta name="twitter:site" content="@_ijjk" />
+        <meta name="twitter:site" content="@_manji0" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
