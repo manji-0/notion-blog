@@ -285,6 +285,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                     src={display_source}
                     key={!useWrapper ? id : undefined}
                     className={!useWrapper ? 'asset-wrapper' : undefined}
+                    allow="fullscreen"
                   />
                 )
               } else {
