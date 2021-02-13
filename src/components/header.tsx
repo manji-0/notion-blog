@@ -22,9 +22,12 @@ export default ({ titlePre = '' }) => {
           name="description"
           content="manji0's profile, blog, and contact"
         />
-        <meta name="og:title" content="manji0" />
+        <meta
+          name="og:title"
+          content={titlePre ? `${titlePre} | manji0` : 'manji0'}
+        />
         <meta property="og:image" content={ogImageUrl} />
-        <meta name="twitter:site" content="@_manji0" />
+        <meta name="twitter:site" content="manji0" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
