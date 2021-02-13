@@ -11,7 +11,7 @@ const navItems: { label: string; page?: string; link?: string }[] = [
 
 const ogImageUrl = 'https://manj.io/og-image.png'
 
-export default ({ titlePre = '' }) => {
+export default ({ titlePre = '', desc = '' }) => {
   const { pathname } = useRouter()
 
   return (
@@ -20,7 +20,7 @@ export default ({ titlePre = '' }) => {
         <title>{titlePre ? `${titlePre} |` : ''} manji0</title>
         <meta
           name="description"
-          content="manji0's profile, blog, and contact"
+          content={desc ? `${desc}` : "manji0's profile, blog, and contact"}
         />
         <meta
           name="og:title"
