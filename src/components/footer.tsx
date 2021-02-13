@@ -11,7 +11,7 @@ export default () => (
         </ExtLink>
       </p>
       <p>
-        <ExtLink href="https://manj.io/atom">RSS Feed</ExtLink>
+        <ExtLink href="/atom">RSS Feed</ExtLink>
       </p>
     </footer>
   </>
