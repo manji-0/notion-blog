@@ -236,6 +236,7 @@ const RenderPost = ({ post, redirect, preview }) => {
               break
             case 'divider':
               toRender.push(<hr className="article" />)
+              break
             case 'text':
               if (properties) {
                 toRender.push(textBlock(properties.title, false, id))
