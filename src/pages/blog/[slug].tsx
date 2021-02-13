@@ -233,8 +233,9 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'bookmark':
             case 'table_of_contents':
             case 'page':
-            case 'divider':
               break
+            case 'divider':
+              toRender.push(<hr className="article" />)
             case 'text':
               if (properties) {
                 toRender.push(textBlock(properties.title, false, id))
