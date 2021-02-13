@@ -10,6 +10,9 @@ export default () => (
           notion-blog
         </ExtLink>
       </p>
+      <p>
+        <ExtLink href="https://manj.io/atom">RSS Feed</ExtLink>
+      </p>
     </footer>
   </>
 )
