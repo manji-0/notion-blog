@@ -54,7 +54,7 @@ export default () => (
         })}
       </div>
       <div className={contactStyles.text}>
-        <p>Site Reliability Engineer</p>
+        <p>Site Reliability Engineer @ Verda, LINE</p>
         <p>Expertise in OpenStack, Kubernetes, and Prometheus</p>
         <p>
           <ExtLink href="https://www.verda.fm/">verda.fm</ExtLink>をやってます。
