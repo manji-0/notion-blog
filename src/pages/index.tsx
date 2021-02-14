@@ -57,6 +57,9 @@ export default () => (
         <p>Site Reliability Engineer</p>
         <p>Expertise in OpenStack, Kubernetes, and Prometheus</p>
         <p>
+          <ExtLink href="https://www.verda.fm/">verda.fm</ExtLink>をやってます。
+        </p>
+        <p>
           <ExtLink href="https://docs.google.com/document/d/1j4FUbrChetZ6T4UbacQ_cMoYiwnSBiMliFK2CaSZP7A">
             Resume
           </ExtLink>
