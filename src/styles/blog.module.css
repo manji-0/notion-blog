@@ -81,9 +81,21 @@
   margin-top: 0;
 }
 
-.post :global(h2),
+.post :global(h2) {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02rem;
+  padding: 0.25em 0em; /*上下 左右の余白*/
+  border-bottom: dashed 2px #777777;
+}
+
 .post :global(h3) {
   margin: 3rem 0 1.5rem 0;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.15em 0.5em; /*上下 左右の余白*/
+  background: transparent; /*背景透明に*/
+  border-left: solid 5px; /*左線*/
 }
 
 .post :global(video),

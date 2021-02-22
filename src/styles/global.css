@@ -294,10 +294,16 @@ h1 {
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: -0.02rem;
-  color: var(--accents-3);
+  border-bottom: dashed 2px;
+}
+
+h3 {
+  font-weight: 800;
+  font-size: 1rem;
+  background: transparent; /*背景透明に*/
 }
 
 .video {
