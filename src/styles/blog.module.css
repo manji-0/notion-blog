@@ -72,9 +72,8 @@
   border-bottom: none;
 }
 
-.postPreview h3,
-.post h1 {
-  margin-bottom: 0;
+.postPreview h3 {
+  margin-bottom: 0.15em;
 }
 
 .post h1 {
@@ -132,7 +131,9 @@
 }
 
 .postPreview :global(.posted) {
+  margin-top: 0.4em;
   margin-bottom: 0.5em;
+  font-size: 0.85em;
 }
 
 .post {
