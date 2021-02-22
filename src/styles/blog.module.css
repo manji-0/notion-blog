@@ -142,6 +142,11 @@
   padding: 5%;
 }
 
+.post :global(.posted) {
+  font-size: 0.8em;
+  color: #777777;
+}
+
 .post :global(hr) {
   margin-bottom: 1em;
 }
