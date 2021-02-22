@@ -38,9 +38,7 @@ function mapToEntry(post) {
         <div xmlns="http://www.w3.org/1999/xhtml">
           ${renderToStaticMarkup(
             post.Description
-              ? (post.Description || []).map((block, idx) =>
-                  textBlock(block, false, post.title + idx)
-                )
+              ? textBlock(post.Description, false, post.title + post.link)
               : post.content
           )}
           <p class="more">
