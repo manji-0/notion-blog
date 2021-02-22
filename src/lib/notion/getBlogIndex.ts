@@ -1,8 +1,6 @@
-import { Sema } from 'async-sema'
 import rpc, { values } from './rpc'
 import createTable from './createTable'
 import getTableData from './getTableData'
-import { getPostPreview } from './getPostPreview'
 import { readFile, writeFile } from '../fs-helpers'
 import { BLOG_INDEX_ID, BLOG_INDEX_CACHE } from './server-constants'
 
@@ -49,32 +47,6 @@ export default async function getBlogIndex(previews = true) {
         )
       }
       return {}
-    }
-
-    // only get 10 most recent post's previews
-    const postsKeys = Object.keys(postsTable).splice(0, 10)
-
-    const sema = new Sema(3, { capacity: postsKeys.length })
-
-    if (previews) {
-      await Promise.all(
-        postsKeys
-          .sort((a, b) => {
-            const postA = postsTable[a]
-            const postB = postsTable[b]
-            const timeA = postA.Date
-            const timeB = postB.Date
-            return Math.sign(timeB - timeA)
-          })
-          .map(async postKey => {
-            await sema.acquire()
-            const post = postsTable[postKey]
-            post.preview = post.id
-              ? await getPostPreview(postsTable[postKey].id)
-              : []
-            sema.release()
-          })
-      )
     }
 
     if (useCache) {
