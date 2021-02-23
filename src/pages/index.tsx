@@ -54,7 +54,7 @@ export default () => (
         {contacts.map(({ Comp, link, alt }) => {
           return (
             <ExtLink key={link} href={link} aria-label={alt}>
-              <Comp height={32} />
+              <Comp height={32} width={32} />
             </ExtLink>
           )
         })}
