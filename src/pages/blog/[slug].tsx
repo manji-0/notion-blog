@@ -343,9 +343,9 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'code': {
               if (properties.title) {
                 const content = properties.title[0][0]
-                const language = properties.language[0][0]
+                const language = properties.language[0][0].toLowerCase()
 
-                if (language === 'LiveScript') {
+                if (language === 'livescript') {
                   // this requires the DOM for now
                   toRender.push(
                     <ReactJSXParser
@@ -360,7 +360,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                   )
                 } else {
                   toRender.push(
-                    <components.Code key={id} language={language || ''}>
+                    <components.Code key={id} language={language || 'textfile'}>
                       {content}
                     </components.Code>
                   )
