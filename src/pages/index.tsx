@@ -1,5 +1,6 @@
 import Header from '../components/header'
 import ExtLink from '../components/ext-link'
+import Img from 'next/image'
 
 import sharedStyles from '../styles/shared.module.css'
 import contactStyles from '../styles/contact.module.css'
@@ -37,7 +38,12 @@ export default () => (
     <Header titlePre="Profile" />
     <div className={sharedStyles.layout}>
       <div className={contactStyles.avatar}>
-        <img src="/avatar.png" alt="avatar with Wataru Manji" height={60} />
+        <Img
+          src="/avatar.png"
+          alt="avatar with Wataru Manji"
+          height="120"
+          width="120"
+        />
       </div>
 
       <h1 style={{ marginTop: 0 }}>manji0</h1>
