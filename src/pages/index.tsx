@@ -41,8 +41,8 @@ export default () => (
         <Img
           src="/avatar.png"
           alt="avatar with Wataru Manji"
-          height="120"
-          width="120"
+          height="125"
+          width="125"
         />
       </div>
 
