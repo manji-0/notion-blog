@@ -12,6 +12,7 @@ import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import ReactEmbedGist from 'react-embed-gist'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -233,6 +234,11 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'bookmark':
             case 'table_of_contents':
             case 'page':
+              break
+            case 'gist':
+              const splited = value.properties.source[0][0].split('/')
+              const gist = splited[3] + '/' + splited[4]
+              toRender.push(<ReactEmbedGist gist={gist} />)
               break
             case 'divider':
               toRender.push(<hr className="article" />)

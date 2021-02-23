@@ -5171,6 +5171,13 @@ react-dom@16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
+react-embed-gist@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-embed-gist/-/react-embed-gist-1.0.11.tgz#a1fb03996c71efe996b81cf5a6ed14ba30800384"
+  integrity sha512-rbfgVJrexnjNOtxgf6W5r/zBRJAWdeiL6/Ri/DIWFbWezBiYVqZk2i0WShCsDr4PTkc6kNPdSLjcuvjtpYjvWw==
+  dependencies:
+    react "^17.0.1"
+
 react-is@16.13.1, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -5189,6 +5196,14 @@ react@16.12.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+react@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
+  integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 read-pkg@^5.2.0:
   version "5.2.0"
