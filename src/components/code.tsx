@@ -18,10 +18,10 @@ import 'prismjs/components/prism-c'
 import 'prismjs/components/prism-cpp'
 import 'prismjs/components/prism-textile'
 
-const Code = ({ children, language }) => {
+const Code = ({ children, language = 'textfile' }) => {
   return (
     <>
-      <pre className="line-number">
+      <pre>
         <code
           dangerouslySetInnerHTML={{
             __html: Prism.highlight(
