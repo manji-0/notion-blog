@@ -207,7 +207,11 @@ const RenderPost = ({ post, redirect, preview }) => {
               break
             case 'gist':
               const url = value.properties.source[0][0]
-              toRender.push(<Gist url={url} />)
+              toRender.push(
+                <p>
+                  <Gist url={url} />
+                </p>
+              )
               break
             case 'tweet':
               const tweetUrl = properties.source[0][0]
@@ -346,14 +350,16 @@ const RenderPost = ({ post, redirect, preview }) => {
             }
             case 'callout': {
               toRender.push(
-                <div className="callout" key={id}>
-                  {value.format?.page_icon && (
-                    <div>{value.format?.page_icon}</div>
-                  )}
-                  <div className="text">
-                    {textBlock(properties.title, true, id)}
+                <p>
+                  <div className="callout" key={id}>
+                    {value.format?.page_icon && (
+                      <div>{value.format?.page_icon}</div>
+                    )}
+                    <div className="text">
+                      {textBlock(properties.title, true, id)}
+                    </div>
                   </div>
-                </div>
+                </p>
               )
               break
             }
