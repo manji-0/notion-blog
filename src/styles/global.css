@@ -396,9 +396,10 @@ b {
 iframe[class*='bookmark'] {
   max-width: 60vw;
   border: 0px;
-  border-style: inset;
-  border-color: initial;
+  border-radius: 2px;
+  padding: 0px;
   text-align: center;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px) {
