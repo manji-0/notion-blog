@@ -378,6 +378,14 @@ li {
   line-height: 1.5;
 }
 
+b {
+  background: linear-gradient(
+    rgba(246, 210, 139, 0) 65%,
+    rgba(246, 210, 139, 1) 65%
+  );
+  border-radius: 2px;
+}
+
 @media (max-width: 600px) {
   .explanation {
     padding: 0 1rem 4rem;
