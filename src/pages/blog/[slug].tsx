@@ -244,6 +244,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                 toRender.push(
                   <Iframe
                     url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent`}
+                    loading="lazy"
                     width="1920px"
                     height={height}
                     className={`youtube-${height}`}
@@ -258,6 +259,8 @@ const RenderPost = ({ post, redirect, preview }) => {
                     src={`/api/asset?assetUrl=${encodeURIComponent(
                       display_source as string
                     )}&blockId=${id}`}
+                    preload="none"
+                    disablePictureInPicture={false}
                     width="100%"
                     height="100%"
                     controls={true}
