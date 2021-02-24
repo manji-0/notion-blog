@@ -200,9 +200,28 @@ const RenderPost = ({ post, redirect, preview }) => {
           }
 
           switch (type) {
-            case 'collection_view':
             case 'bookmark':
+              console.log(value)
+              const title = value.properties.title[0][0]
+              const link = value.properties.link[0][0]
+
+              toRender.push(
+                <p>
+                  <Iframe
+                    className="bookmark"
+                    title={title}
+                    url={`https://hatenablog-parts.com/embed?url=${link}`}
+                    width="100%"
+                    height="149"
+                    loading="lazy"
+                    position="relative"
+                    frameBorder={0}
+                  />
+                </p>
+              )
+              break
             case 'table_of_contents':
+            case 'collection_view':
             case 'page':
               break
             case 'gist':
