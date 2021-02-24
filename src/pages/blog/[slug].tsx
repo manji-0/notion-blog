@@ -13,7 +13,7 @@ import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import Gist from 'super-react-gist'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import Img from 'next/image'
-const Iframe = lazy(() => import('react-iframe'))
+import Iframe from 'react-iframe'
 const Link = lazy(() => import('next/link'))
 
 // Get the data for each blog post
