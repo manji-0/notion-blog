@@ -13,6 +13,7 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import Gist from 'super-react-gist'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -38,23 +39,6 @@ export async function getStaticProps({ params: { slug }, preview }) {
   for (let i = 0; i < postData.blocks.length; i++) {
     const { value } = postData.blocks[i]
     const { type, properties } = value
-    if (type == 'tweet') {
-      const src = properties.source[0][0]
-      // parse id from https://twitter.com/_ijjk/status/TWEET_ID format
-      const tweetId = src.split('/')[5].split('?')[0]
-      if (!tweetId) continue
-
-      try {
-        const res = await fetch(
-          `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
-        )
-        const json = await res.json()
-        properties.html = json.html.split('<script')[0]
-        post.hasTweet = true
-      } catch (_) {
-        console.log(`Failed to get tweet embed for ${src}`)
-      }
-    }
   }
 
   const { users } = await getNotionUsers(post.Authors || [])
@@ -98,21 +82,6 @@ const RenderPost = ({ post, redirect, preview }) => {
     }
   } = {}
 
-  useEffect(() => {
-    const twitterSrc = 'https://platform.twitter.com/widgets.js'
-    // make sure to initialize any new widgets loading on
-    // client navigation
-    if (post && post.hasTweet) {
-      if ((window as any)?.twttr?.widgets) {
-        ;(window as any).twttr.widgets.load()
-      } else if (!document.querySelector(`script[src="${twitterSrc}"]`)) {
-        const script = document.createElement('script')
-        script.async = true
-        script.src = twitterSrc
-        document.querySelector('body').appendChild(script)
-      }
-    }
-  }, [])
   useEffect(() => {
     if (redirect && !post) {
       router.replace(redirect)
@@ -238,6 +207,21 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'gist':
               const url = value.properties.source[0][0]
               toRender.push(<Gist url={url} />)
+              break
+            case 'tweet':
+              const tweetUrl = properties.source[0][0]
+              const pos = tweetUrl.indexOf('?')
+              let tweetId = tweetUrl.substring(0, pos).split('/')[5]
+              if (!tweetId) {
+                tweetId = tweetUrl.split('/')[5]
+              }
+              toRender.push(
+                <TwitterTweetEmbed
+                  key={id}
+                  tweetId={tweetId}
+                  options={{ margin: '0 auto;' }}
+                />
+              )
               break
             case 'divider':
               toRender.push(<hr className="article" />)
