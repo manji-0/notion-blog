@@ -260,6 +260,8 @@ const RenderPost = ({ post, redirect, preview }) => {
                     )}&blockId=${id}`}
                     width="100%"
                     height="100%"
+                    controls={true}
+                    loop={true}
                   />
                 )
               }
