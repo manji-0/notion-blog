@@ -12,7 +12,7 @@ import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import Gist from 'super-react-gist'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
-const Img = lazy(() => import('next/image'))
+import Img from 'next/image'
 const Iframe = lazy(() => import('react-iframe'))
 const Link = lazy(() => import('next/link'))
 
