@@ -59,4 +59,8 @@ module.exports = {
     }
     return cfg
   },
+  images: {
+    loader: 'default',
+    domains: ['localhost', 'manj.io'],
+  },
 }

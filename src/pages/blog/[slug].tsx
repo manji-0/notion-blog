@@ -14,6 +14,8 @@ import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import Gist from 'super-react-gist'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
+import Img from 'next/image'
+import YouTube from 'react-youtube'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -231,92 +233,32 @@ const RenderPost = ({ post, redirect, preview }) => {
                 toRender.push(textBlock(properties.title, false, id))
               }
               break
-            case 'image':
             case 'video':
-            case 'embed': {
+              const youtubeId = properties.source[0][0].match(/\?v=([^&]+)/)
+              toRender.push(
+                <YouTube videoId={youtubeId[1]} key={youtubeId[1]} />
+              )
+              break
+            case 'embed':
+              break
+            case 'image': {
               const { format = {} } = value
-              const {
-                block_width,
-                block_height,
-                display_source,
-                block_aspect_ratio,
-              } = format
-              const baseBlockWidth = 768
-              const roundFactor = Math.pow(10, 2)
-              // calculate percentages
+              const { block_width, display_source, block_aspect_ratio } = format
               const width = block_width
-                ? `${Math.round(
-                    (block_width / baseBlockWidth) * 100 * roundFactor
-                  ) / roundFactor}%`
-                : block_height || '100%'
-
-              const isImage = type === 'image'
-              const Comp = isImage ? 'img' : 'video'
-              const useWrapper = block_aspect_ratio && !block_height
-              const childStyle: CSSProperties = useWrapper
-                ? {
-                    width: '100%',
-                    height: '100%',
-                    border: 'none',
-                    position: 'absolute',
-                    top: 0,
-                    margin: 0,
-                    padding: 0,
-                  }
-                : {
-                    width,
-                    border: 'none',
-                    height: block_height,
-                    display: 'block',
-                    maxWidth: '100%',
-                  }
-
-              let child = null
-
-              if (!isImage && !value.file_ids) {
-                // external resource use iframe
-                child = (
-                  <iframe
-                    style={childStyle}
-                    src={display_source}
-                    key={!useWrapper ? id : undefined}
-                    className={!useWrapper ? 'asset-wrapper' : undefined}
-                    allow="fullscreen"
-                  />
-                )
-              } else {
-                // notion resource
-                child = (
-                  <Comp
-                    key={!useWrapper ? id : undefined}
-                    src={`/api/asset?assetUrl=${encodeURIComponent(
-                      display_source as any
-                    )}&blockId=${id}`}
-                    controls={!isImage}
-                    alt={`An ${isImage ? 'image' : 'video'} from Notion`}
-                    loop={!isImage}
-                    muted={!isImage}
-                    autoPlay={!isImage}
-                    style={childStyle}
-                  />
-                )
-              }
+              const height = Math.round(block_width * block_aspect_ratio)
 
               toRender.push(
-                useWrapper ? (
-                  <div
-                    style={{
-                      paddingTop: `${Math.round(block_aspect_ratio * 100)}%`,
-                      position: 'relative',
-                    }}
-                    className="asset-wrapper"
-                    key={id}
-                  >
-                    {child}
-                  </div>
-                ) : (
-                  child
-                )
+                <Img
+                  unoptimized={true}
+                  key={id}
+                  src={`/api/asset?assetUrl=${encodeURIComponent(
+                    display_source as string
+                  )}&blockId=${id}`}
+                  width={width}
+                  height={height}
+                  layout="responsive"
+                  className={blogStyles.postImg}
+                />
               )
               break
             }
