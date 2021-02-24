@@ -1,4 +1,4 @@
-import React, { useEffect, lazy } from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Header from '../../components/header'
 import Heading from '../../components/heading'
@@ -14,7 +14,7 @@ import Gist from 'super-react-gist'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import Img from 'next/image'
 import Iframe from 'react-iframe'
-const Link = lazy(() => import('next/link'))
+import Link from 'next/link'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
