@@ -221,7 +221,7 @@ pre.dark[class*='language-'] {
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 60vw) {
   .feature div {
     flex-basis: auto;
     padding-left: 0;
@@ -264,7 +264,7 @@ hr.article {
   border-style: solid;
   border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1"><circle fill="hsla(0, 0%, 65%, 1.0)" cx="1" cy="0.5" r="0.5"/></svg>')
     0 0 100% repeat;
-  width: 216px;
+  width: 40vw;
   margin-bottom: 1em;
 }
 
@@ -320,13 +320,22 @@ h3 {
   outline: none;
 }
 
-.youtube {
-  margin: 2rem auto;
+.youtube-1079px {
+  margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-  max-width: 100%;
-  display: block;
-  border-color: transparent;
-  border-width: 0px;
+  max-width: 50vw;
+  max-height: 28.125vw;
+  padding: 1px;
+  text-align: center;
+}
+
+.youtube-1440px {
+  margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  max-width: 50vw;
+  max-height: 40vw;
+  padding: 1px;
+  text-align: center;
 }
 
 p {
@@ -366,7 +375,7 @@ pre :global(code) {
   transform: skew(-20deg);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 60vw) {
   .explanation {
     padding: 0 1rem 4rem;
   }

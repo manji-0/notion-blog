@@ -234,22 +234,36 @@ const RenderPost = ({ post, redirect, preview }) => {
               }
               break
             case 'video':
+              console.log(value)
               const { format = {} } = value
-              const aspect_ratio = format.block_aspect_ratio
-
-              console.log(aspect_ratio)
               const youtubeId = properties.source[0][0].match(/\?v=([^&]+)/)
 
-              toRender.push(
-                <Iframe
-                  url={`https://youtube.com/embed/${youtubeId[1]}`}
-                  width="600px"
-                  height={`${Math.round(600 * aspect_ratio)}px`}
-                  id={id}
-                  className="youtube"
-                  position="relative"
-                />
-              )
+              if (youtubeId) {
+                const aspect_ratio = format.block_aspect_ratio as number
+                const height = `${Math.round(aspect_ratio * 1920)}px`
+                toRender.push(
+                  <Iframe
+                    url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent`}
+                    width="1920px"
+                    height={height}
+                    className={`youtube-${height}`}
+                    position="relative"
+                    frameBorder={0}
+                  />
+                )
+              } else {
+                const display_source = format.display_source
+                toRender.push(
+                  <video
+                    src={`/api/asset?assetUrl=${encodeURIComponent(
+                      display_source as string
+                    )}&blockId=${id}`}
+                    width="100%"
+                    height="100%"
+                  />
+                )
+              }
+
               break
             case 'embed':
               break
