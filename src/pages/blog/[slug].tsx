@@ -245,6 +245,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                   <Iframe
                     url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent`}
                     loading="lazy"
+                    allow="accelerometer; fullscreen; encrypted-media; picture-in-picture; gyroscope"
                     width="1920px"
                     height={height}
                     className={`youtube-${height}`}
