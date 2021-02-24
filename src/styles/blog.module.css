@@ -138,9 +138,17 @@
 }
 
 .post {
-  max-width: calc(600px + 20%);
+  max-width: 70vw;
   margin: 0 auto;
   padding: 5%;
+}
+
+@media (max-width: 600px) {
+  .post {
+    max-width: 95vw;
+    margin: 0 auto;
+    padding: 5%;
+  }
 }
 
 .post :global(.posted) {

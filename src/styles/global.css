@@ -325,8 +325,8 @@ h3 {
 .youtube-1079px {
   margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-  max-width: 50vw;
-  max-height: 28.125vw;
+  max-width: 60vw;
+  max-height: 33.75vw;
   padding: 1px;
   text-align: center;
 }
@@ -334,8 +334,8 @@ h3 {
 .youtube-1440px {
   margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-  max-width: 50vw;
-  max-height: 40vw;
+  max-width: 60vw;
+  max-height: 45vw;
   padding: 1px;
   text-align: center;
 }
@@ -390,8 +390,8 @@ pre :global(code) {
   .youtube-1079px {
     margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-    max-width: 90vw;
-    max-height: 50vw;
+    max-width: 85vw;
+    max-height: 47.8125vw;
     border: 0px;
     padding: 1px;
     text-align: center;
@@ -400,8 +400,8 @@ pre :global(code) {
   .youtube-1440px {
     margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-    max-width: 90vw;
-    max-height: 67vw;
+    max-width: 85vw;
+    max-height: 63.75vw;
     border: 0px;
     padding: 1px;
     text-align: center;
