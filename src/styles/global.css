@@ -48,7 +48,7 @@ body {
   overflow-x: hidden;
 }
 
-code[class*='language-'],
+/* code[class*='language-'],
 pre[class*='language-'] {
   color: #000;
   text-align: left;
@@ -59,7 +59,7 @@ pre[class*='language-'] {
   line-height: 1.4em;
   tab-size: 4;
   hyphens: none;
-}
+} */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -320,6 +320,15 @@ h3 {
   outline: none;
 }
 
+.youtube {
+  margin: 2rem auto;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  display: block;
+  border-color: transparent;
+  border-width: 0px;
+}
+
 p {
   color: #555;
   font-weight: 400;
@@ -334,13 +343,13 @@ pre :global(code) {
   -webkit-overflow-scrolling: touch;
 }
 
-code {
+/* code {
   font-size: 0.8rem;
   background: #f1f1f1;
   padding: 0.2rem;
   border-radius: var(--radius);
   font-family: var(--font-mono);
-}
+} */
 
 .slice {
   position: relative;

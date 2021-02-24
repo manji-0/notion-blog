@@ -15,7 +15,7 @@ import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import Gist from 'super-react-gist'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import Img from 'next/image'
-import YouTube from 'react-youtube'
+import Iframe from 'react-iframe'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -234,9 +234,21 @@ const RenderPost = ({ post, redirect, preview }) => {
               }
               break
             case 'video':
+              const { format = {} } = value
+              const aspect_ratio = format.block_aspect_ratio
+
+              console.log(aspect_ratio)
               const youtubeId = properties.source[0][0].match(/\?v=([^&]+)/)
+
               toRender.push(
-                <YouTube videoId={youtubeId[1]} key={youtubeId[1]} />
+                <Iframe
+                  url={`https://youtube.com/embed/${youtubeId[1]}`}
+                  width="600px"
+                  height={`${Math.round(600 * aspect_ratio)}px`}
+                  id={id}
+                  className="youtube"
+                  position="relative"
+                />
               )
               break
             case 'embed':
