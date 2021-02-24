@@ -248,7 +248,7 @@ a:hover {
   color: #3291ff;
 }
 
-a[target='_blank']:after {
+a[target='_blank'][class*='article']:after {
   content: '⏎';
   font-family: var(--font-sans);
   margin: 0px 3px;

@@ -16,6 +16,7 @@ function applyTags(tags = [], children, noPTag = false, key) {
     }
     if (tagName === 'a') {
       props.href = tag[1]
+      props.className = 'article'
     }
     if (tagName === 'e') {
       tagName = components.Equation
@@ -31,7 +32,6 @@ function applyTags(tags = [], children, noPTag = false, key) {
 export function textBlock(text = [], noPTag = false, mainKey) {
   const children = []
   let key = 0
-
   for (const textItem of text) {
     key++
     if (textItem.length === 1) {
