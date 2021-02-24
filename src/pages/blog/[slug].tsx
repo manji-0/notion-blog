@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import fetch from 'node-fetch'
+import React, { useEffect, lazy } from 'react'
 import { useRouter } from 'next/router'
 import Header from '../../components/header'
 import Heading from '../../components/heading'
@@ -8,14 +7,14 @@ import ReactJSXParser from '@zeit/react-jsx-parser'
 import blogStyles from '../../styles/blog.module.css'
 import { textBlock } from '../../lib/notion/renderers'
 import getPageData from '../../lib/notion/getPageData'
-import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
 import Gist from 'super-react-gist'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
-import Img from 'next/image'
-import Iframe from 'react-iframe'
+const Img = lazy(() => import('next/image'))
+const Iframe = lazy(() => import('react-iframe'))
+const Link = lazy(() => import('next/link'))
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -218,11 +217,13 @@ const RenderPost = ({ post, redirect, preview }) => {
                 tweetId = tweetUrl.split('/')[5]
               }
               toRender.push(
-                <TwitterTweetEmbed
-                  key={id}
-                  tweetId={tweetId}
-                  options={{ margin: '0 auto;' }}
-                />
+                <div className="twitter">
+                  <TwitterTweetEmbed
+                    key={id}
+                    tweetId={tweetId}
+                    options={{ margin: '0 auto;' }}
+                  />
+                </div>
               )
               break
             case 'divider':

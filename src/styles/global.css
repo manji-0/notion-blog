@@ -340,6 +340,10 @@ h3 {
   text-align: center;
 }
 
+iframe[id*='twitter-widget'] {
+  margin-left: 5vw;
+}
+
 p {
   color: #555;
   font-weight: 400;
@@ -385,6 +389,10 @@ pre :global(code) {
   h2 {
     font-size: 0.95rem;
     letter-spacing: 0;
+  }
+
+  iframe[id*='twitter-widget'] {
+    margin-left: 0vw;
   }
 
   .youtube-1079px {
