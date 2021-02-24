@@ -264,13 +264,13 @@ const RenderPost = ({ post, redirect, preview }) => {
 
               if (youtubeId) {
                 const aspect_ratio = format.block_aspect_ratio as number
-                const height = `${Math.round(aspect_ratio * 1920)}px`
+                const height = `${Math.round(aspect_ratio * 3840)}px`
                 toRender.push(
                   <Iframe
                     url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent?playsinline=1`}
                     loading="lazy"
                     allow="accelerometer; fullscreen; encrypted-media; picture-in-picture; gyroscope"
-                    width="1920px"
+                    width="3840px"
                     height={height}
                     className={`youtube-${height}`}
                     position="relative"
