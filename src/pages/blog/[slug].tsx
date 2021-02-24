@@ -267,7 +267,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                 const height = `${Math.round(aspect_ratio * 1920)}px`
                 toRender.push(
                   <Iframe
-                    url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent`}
+                    url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent?playsinline=1`}
                     loading="lazy"
                     allow="accelerometer; fullscreen; encrypted-media; picture-in-picture; gyroscope"
                     width="1920px"
@@ -285,7 +285,8 @@ const RenderPost = ({ post, redirect, preview }) => {
                       display_source as string
                     )}&blockId=${id}`}
                     preload="none"
-                    disablePictureInPicture={false}
+                    playsInline={true}
+                    disablePictureInPicture={true}
                     width="100%"
                     height="100%"
                     controls={true}
