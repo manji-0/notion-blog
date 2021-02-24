@@ -48,18 +48,6 @@ body {
   overflow-x: hidden;
 }
 
-/* code[class*='language-'],
-pre[class*='language-'] {
-  color: #000;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  font-size: 0.95em;
-  line-height: 1.4em;
-  tab-size: 4;
-  hyphens: none;
-} */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -358,13 +346,15 @@ pre :global(code) {
   -webkit-overflow-scrolling: touch;
 }
 
-/* code {
-  font-size: 0.8rem;
-  background: #f1f1f1;
-  padding: 0.2rem;
-  border-radius: var(--radius);
+code {
+  font-size: 0.9rem;
+  margin: 0 2px;
+  background: #f8f8f8;
+  padding: 0 5px;
+  border: 1px solid #f1f1f1;
+  border-radius: 2px;
   font-family: var(--font-mono);
-} */
+}
 
 .slice {
   position: relative;
@@ -379,6 +369,13 @@ pre :global(code) {
   width: 130%;
   background: #fff;
   transform: skew(-20deg);
+}
+
+li {
+  color: #333;
+  font-weight: 400;
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 600px) {
