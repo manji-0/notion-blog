@@ -313,11 +313,13 @@ h3 {
   margin-left: 50%;
   text-align: center;
   cursor: pointer;
+  border: 0px;
 }
 .video :global(video) {
   max-width: 100%;
   max-height: 90vh;
   outline: none;
+  border: 0px;
 }
 
 .youtube-1079px {
@@ -390,6 +392,7 @@ pre :global(code) {
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
     max-width: 90vw;
     max-height: 50vw;
+    border: 0px;
     padding: 1px;
     text-align: center;
   }
@@ -399,6 +402,7 @@ pre :global(code) {
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
     max-width: 90vw;
     max-height: 67vw;
+    border: 0px;
     padding: 1px;
     text-align: center;
   }
