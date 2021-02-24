@@ -269,7 +269,7 @@ const RenderPost = ({ post, redirect, preview }) => {
 
                 toRender.push(
                   <Iframe
-                    url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent?playsinline=1`}
+                    url={`https://youtube.com/embed/${youtubeId[1]}?wmode=transparent&playsinline=1`}
                     loading="lazy"
                     allow="accelerometer; fullscreen; encrypted-media; picture-in-picture; gyroscope"
                     width="100000px"
