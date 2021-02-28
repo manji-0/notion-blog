@@ -13,9 +13,10 @@ import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 
-export async function getStaticProps({
-  preview,
-}): Promise<{ props: { preview: any; posts: any[] }; revalidate: number }> {
+export async function getStaticProps(): Promise<{
+  props: { posts: any[] }
+  revalidate: number
+}> {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
@@ -23,7 +24,7 @@ export async function getStaticProps({
     .map(slug => {
       const post = postsTable[slug]
       // remove draft posts in production
-      if (!preview && !postIsPublished(post)) {
+      if (!postIsPublished(post)) {
         return null
       }
       post.Authors = post.Authors || []
@@ -42,29 +43,17 @@ export async function getStaticProps({
 
   return {
     props: {
-      preview: preview || false,
       posts,
     },
     revalidate: 10,
   }
 }
 
-const postList = ({ posts = [], preview }): JSX.Element => {
+const postList = ({ posts = [] }): JSX.Element => {
   posts.sort((a, b) => b.Date - a.Date)
   return (
     <>
       <Header titlePre="Blog" />
-      {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
-            <Link href={`/api/clear-preview`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
-            </Link>
-          </div>
-        </div>
-      )}
       <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
         {posts.length === 0 && (
           <p className={blogStyles.noPosts}>There are no posts yet</p>

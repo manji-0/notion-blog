@@ -4,13 +4,10 @@ import getTableData from './getTableData'
 import { readFile, writeFile } from '../fs-helpers'
 import { BLOG_INDEX_ID, BLOG_INDEX_CACHE } from './server-constants'
 
-export default async function getBlogIndex(
-  previews = true,
-  include_future_posts = false
-) {
+export default async function getBlogIndex() {
   let postsTable: any = null
   const useCache = process.env.USE_CACHE === 'true'
-  const cacheFile = `${BLOG_INDEX_CACHE}${previews ? '_previews' : ''}`
+  const cacheFile = `${BLOG_INDEX_CACHE}`
 
   if (useCache) {
     try {
@@ -52,15 +49,13 @@ export default async function getBlogIndex(
       return {}
     }
 
-    if (!include_future_posts) {
-      const nowDate = Date.now()
+    const nowDate = Date.now()
 
-      Object.keys(postsTable).forEach(slug => {
-        if (postsTable[slug].Date > nowDate) {
-          delete postsTable[slug]
-        }
-      })
-    }
+    Object.keys(postsTable).forEach(slug => {
+      if (postsTable[slug].Date > nowDate) {
+        delete postsTable[slug]
+      }
+    })
 
     if (useCache) {
       writeFile(cacheFile, JSON.stringify(postsTable), 'utf8').catch(() => {})
