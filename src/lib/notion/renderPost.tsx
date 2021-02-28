@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import dynamic from 'next/dynamic'
 import Header from '../../components/header'
 import Heading from '../../components/heading'
 import components from '../../components/dynamic'
@@ -6,10 +7,13 @@ import ReactJSXParser from '@zeit/react-jsx-parser'
 import blogStyles from '../../styles/blog.module.css'
 import { textBlock } from '../../lib/notion/renderers'
 import { getDateStr } from '../../lib/blog-helpers'
-import Gist from 'super-react-gist'
-import { TwitterTweetEmbed } from 'react-twitter-embed'
-import Img from 'next/image'
-import Iframe from 'react-iframe'
+
+const Gist = dynamic(() => import('super-react-gist'))
+const TwitterTweetEmbed = dynamic(
+    () => import('react-twitter-embed').then(
+        (twitter) => twitter.TwitterTweetEmbed))
+const Iframe = dynamic(() => import('react-iframe'))
+const Img = dynamic(() => import('next/image'))
 
 const listTypes = new Set(['bulleted_list', 'numbered_list'])
 

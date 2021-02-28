@@ -1,7 +1,7 @@
 import getPageData from '../../lib/notion/getPageData'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
-import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import { getBlogLink } from '../../lib/blog-helpers'
 import RenderPost from '../../lib/notion/renderPost'
 
 // Get the data for each blog post
