@@ -24,11 +24,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
 
   // if we can't find the post or if it is unpublished and
   // viewed without preview mode then we just redirect to /blog
-  if (
-    !post ||
-    (post.Published !== 'Yes' && !preview) ||
-    post.Date > Date.now()
-  ) {
+  if (!post || post.Published !== 'Yes') {
     console.log(`Failed to find post for slug: ${slug}`)
     return {
       props: {

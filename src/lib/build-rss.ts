@@ -69,14 +69,13 @@ function createRSS(blogPosts = []): string {
 }
 
 async function main() {
-  const postsTable = await getBlogIndex(true)
+  const postsTable = await getBlogIndex()
   const neededAuthors = new Set<string>()
 
   const blogPosts = Object.keys(postsTable)
     .map(slug => {
       const post = postsTable[slug]
       if (!postIsPublished(post)) return null
-      if (post.Date > Date.now()) return null
 
       post.authors = post.Authors || []
 

@@ -23,7 +23,7 @@ export async function getStaticProps({
     .map(slug => {
       const post = postsTable[slug]
       // remove draft posts in production
-      if ((!preview && !postIsPublished(post)) || post.Date > Date.now()) {
+      if (!preview && !postIsPublished(post)) {
         return null
       }
       post.Authors = post.Authors || []
@@ -49,7 +49,7 @@ export async function getStaticProps({
   }
 }
 
-export default ({ posts = [], preview }): JSX.Element => {
+const postList = ({ posts = [], preview }): JSX.Element => {
   posts.sort((a, b) => b.Date - a.Date)
   return (
     <>
@@ -95,3 +95,5 @@ export default ({ posts = [], preview }): JSX.Element => {
     </>
   )
 }
+
+export default postList
