@@ -8,10 +8,12 @@ import blogStyles from '../../styles/blog.module.css'
 import { textBlock } from '../../lib/notion/renderers'
 import { getDateStr } from '../../lib/blog-helpers'
 
-const Gist = dynamic(() => import('super-react-gist'))
+const Gist = dynamic(
+    () => import('super-react-gist'), { ssr: false })
 const TwitterTweetEmbed = dynamic(
     () => import('react-twitter-embed').then(
-        (twitter) => twitter.TwitterTweetEmbed))
+        (twitter) => twitter.TwitterTweetEmbed),
+        { ssr: false })
 const Iframe = dynamic(() => import('react-iframe'))
 const Img = dynamic(() => import('next/image'))
 
