@@ -7,13 +7,9 @@ import ReactJSXParser from '@zeit/react-jsx-parser'
 import blogStyles from '../../styles/blog.module.css'
 import { textBlock } from '../../lib/notion/renderers'
 import { getDateStr } from '../../lib/blog-helpers'
+import Gist from 'super-react-gist'
+import {TwitterTweetEmbed} from 'react-twitter-embed'
 
-const Gist = dynamic(
-    () => import('super-react-gist'), { ssr: false })
-const TwitterTweetEmbed = dynamic(
-    () => import('react-twitter-embed').then(
-        (twitter) => twitter.TwitterTweetEmbed),
-        { ssr: false })
 const Iframe = dynamic(() => import('react-iframe'))
 const Img = dynamic(() => import('next/image'))
 
@@ -146,7 +142,7 @@ const RenderPost = ({ post }) => {
             case 'page':
               break
             case 'gist':
-              const url = value.properties.source[0][0]
+              const url = value.properties.source[0][0] as string
               toRender.push(<Gist url={url} />)
               break
             case 'tweet':
