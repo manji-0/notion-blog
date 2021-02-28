@@ -13,7 +13,9 @@ import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 
-export async function getStaticProps({ preview }) {
+export async function getStaticProps({
+  preview,
+}): Promise<{ props: { preview: any; posts: any[] }; revalidate: number }> {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
@@ -21,7 +23,7 @@ export async function getStaticProps({ preview }) {
     .map(slug => {
       const post = postsTable[slug]
       // remove draft posts in production
-      if (!preview && !postIsPublished(post)) {
+      if ((!preview && !postIsPublished(post)) || post.Date > Date.now()) {
         return null
       }
       post.Authors = post.Authors || []
@@ -47,7 +49,8 @@ export async function getStaticProps({ preview }) {
   }
 }
 
-export default ({ posts = [], preview }) => {
+export default ({ posts = [], preview }): JSX.Element => {
+  posts.sort((a, b) => b.Date - a.Date)
   return (
     <>
       <Header titlePre="Blog" />

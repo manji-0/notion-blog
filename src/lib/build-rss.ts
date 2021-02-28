@@ -14,11 +14,11 @@ process.env.USE_CACHE = 'true'
 // constants
 const NOW = new Date().toJSON()
 
-function mapToAuthor(author) {
+function mapToAuthor(author): string {
   return `<author><name>${author.full_name}</name></author>`
 }
 
-function decode(string) {
+function decode(string: string): string {
   return string
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -27,7 +27,7 @@ function decode(string) {
     .replace(/'/g, '&apos;')
 }
 
-function mapToEntry(post) {
+function mapToEntry(post): string {
   return `
     <entry>
       <id>${post.link}</id>
@@ -54,7 +54,7 @@ function concat(total, item) {
   return total + item
 }
 
-function createRSS(blogPosts = []) {
+function createRSS(blogPosts = []): string {
   const postsString = blogPosts.map(mapToEntry).reduce(concat, '')
 
   return `<?xml version="1.0" encoding="utf-8"?>
@@ -75,7 +75,8 @@ async function main() {
   const blogPosts = Object.keys(postsTable)
     .map(slug => {
       const post = postsTable[slug]
-      if (!postIsPublished(post)) return
+      if (!postIsPublished(post)) return null
+      if (post.Date > Date.now()) return null
 
       post.authors = post.Authors || []
 
