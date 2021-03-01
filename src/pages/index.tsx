@@ -76,4 +76,3 @@ const Default = () => (
 )
 
 export default Default
-export const config = { amp: true }
