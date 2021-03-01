@@ -33,7 +33,7 @@ const contacts = [
   },
 ]
 
-export default () => (
+const Default = () => (
   <>
     <Header titlePre="Profile" />
     <div className={sharedStyles.layout}>
@@ -74,3 +74,6 @@ export default () => (
     </div>
   </>
 )
+
+export default Default
+export const config = { amp: true }
