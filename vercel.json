@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/atom",
+      "source": "/api/atom",
       "headers": [
         {
           "key": "Cache-Control",

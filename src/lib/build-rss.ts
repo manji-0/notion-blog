@@ -54,7 +54,7 @@ function createRSS(blogPosts = []): string {
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>manji0 blog</title>
     <subtitle>Write a lot of things.</subtitle>
-    <link href="/atom" rel="self" type="application/rss+xml"/>
+    <link href="/api/atom" rel="self" type="application/rss+xml"/>
     <link href="/" />
     <updated>${NOW}</updated>
     <id>manji0</id>${postsString}

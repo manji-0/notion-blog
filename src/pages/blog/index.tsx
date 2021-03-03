@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Header from '../../components/header'
-
 import blogStyles from '../../styles/blog.module.css'
 import sharedStyles from '../../styles/shared.module.css'
 

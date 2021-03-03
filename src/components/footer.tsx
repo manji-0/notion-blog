@@ -11,7 +11,7 @@ const Footer = () => (
         </ExtLink>
       </p>
       <p>
-        <ExtLink href="/atom">RSS Feed</ExtLink>
+        <ExtLink href="/api/atom">RSS Feed</ExtLink>
       </p>
     </footer>
   </>
