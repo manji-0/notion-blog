@@ -1,13 +1,22 @@
 {
-    "headers": [
-      {
-        "source": "/api/asset/(.*)",
-        "headers":[
-          {
-            "key" : "Cache-Control",
-            "value" : "public, max-age=7200, s-max-age=7200, stale-while-revalidate"
-          }
-        ]
-      }
-    ]
-  }
+  "headers": [
+    {
+      "source": "/api/asset/(.*)",
+      "headers":[
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=7200, s-max-age=7200, stale-while-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/atom",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
+}
