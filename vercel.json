@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "asset",
+        "source": "/api/asset/(.*)",
         "headers":[
           {
             "key" : "Cache-Control",

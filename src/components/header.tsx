@@ -11,7 +11,7 @@ const navItems: { label: string; page?: string; link?: string }[] = [
 
 const ogImageUrl = 'https://manj.io/og-image.png'
 
-export default ({ titlePre = '', desc = '' }) => {
+const Header = ({ titlePre = '', desc = '' }) => {
   const { pathname } = useRouter()
 
   return (
@@ -49,3 +49,5 @@ export default ({ titlePre = '', desc = '' }) => {
     </header>
   )
 }
+
+export default Header

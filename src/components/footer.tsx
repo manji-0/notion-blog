@@ -1,6 +1,6 @@
 import ExtLink from './ext-link'
 
-export default () => (
+const Footer = () => (
   <>
     <footer>
       <p>(c) 2021 Wataru Manji</p>
@@ -16,3 +16,5 @@ export default () => (
     </footer>
   </>
 )
+
+export default Footer
