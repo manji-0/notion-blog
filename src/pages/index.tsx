@@ -33,6 +33,13 @@ const contacts = [
   },
 ]
 
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 10,
+  }
+}
+
 const Default = () => (
   <>
     <Header titlePre="Profile" />
