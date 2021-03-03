@@ -192,21 +192,22 @@ const RenderPost = ({ post }) => {
                   />
                 )
               } else {
-                const display_source = format.display_source
-                toRender.push(
-                  <video
-                    src={`/api/asset?assetUrl=${encodeURIComponent(
-                      display_source as string
-                    )}&blockId=${id}`}
-                    preload="none"
-                    playsInline={true}
-                    disablePictureInPicture={true}
-                    width="100%"
-                    height="100%"
-                    controls={true}
-                    loop={true}
-                  />
-                )
+                break
+                // const display_source = format.display_source
+                // toRender.push(
+                //   <video
+                //     src={`/api/asset?assetUrl=${encodeURIComponent(
+                //       display_source as string
+                //     )}&blockId=${id}`}
+                //     preload="none"
+                //     playsInline={true}
+                //     disablePictureInPicture={true}
+                //     width="100%"
+                //     height="100%"
+                //     controls={true}
+                //     loop={true}
+                //   />
+                // )
               }
 
               break
