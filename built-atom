@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <title>manji0 blog</title>
+    <subtitle>Write a lot of things.</subtitle>
+    <link href="/atom" rel="self" type="application/rss+xml"/>
+    <link href="/" />
+    <updated>2021-03-03T16:17:41.996Z</updated>
+    <id>manji0</id>
+    <entry>
+      <id>/blog/notion-blog-custom-4</id>
+      <title>notion-blogの改造メモ (4)</title>
+      <link href="/blog/notion-blog-custom-4"/>
+      <updated>2021-03-03T14:05:00.678Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>画像をCDNに載せた</p>
+          <p class="more">
+            <a href="/blog/notion-blog-custom-4">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/notion-blog-custom-3</id>
+      <title>notion-blogの改造メモ(3)</title>
+      <link href="/blog/notion-blog-custom-3"/>
+      <updated>2021-02-28T13:47:00.678Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>さらにちょっと改造</p>
+          <p class="more">
+            <a href="/blog/notion-blog-custom-3">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/notion-blog-custom-2</id>
+      <title>notion-blogの改造メモ(2)</title>
+      <link href="/blog/notion-blog-custom-2"/>
+      <updated>2021-02-22T15:00:00.678Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>改造したところ</p>
+          <p class="more">
+            <a href="/blog/notion-blog-custom-2">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/zoom-mute-mac</id>
+      <title>MacでのZoomミュート切り替え物理ボタンの実装</title>
+      <link href="/blog/zoom-mute-mac"/>
+      <updated>2021-02-15T15:00:00.679Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>小ネタ</p>
+          <p class="more">
+            <a href="/blog/zoom-mute-mac">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/equality-between-men-and-women-1</id>
+      <title>男女平等とか育休どっちが取るかとかについて</title>
+      <link href="/blog/equality-between-men-and-women-1"/>
+      <updated>2021-02-14T15:00:00.679Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Twitterに流れてたのを見て書きたくなった</p>
+          <p class="more">
+            <a href="/blog/equality-between-men-and-women-1">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/mic-and-recorder</id>
+      <title>録音機材の話</title>
+      <link href="/blog/mic-and-recorder"/>
+      <updated>2021-02-14T04:00:00.679Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Podcastの収録をどうやってるかというメモ</p>
+          <p class="more">
+            <a href="/blog/mic-and-recorder">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/notion-blog-custom-1</id>
+      <title>notion-blogの改造メモ (1)</title>
+      <link href="/blog/notion-blog-custom-1"/>
+      <updated>2021-02-13T15:00:00.679Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>このサイトをつくるにあたって改造したところ &amp; これからしたいところ</p>
+          <p class="more">
+            <a href="/blog/notion-blog-custom-1">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/hello-notion-blog</id>
+      <title>Notion Blogに移行</title>
+      <link href="/blog/hello-notion-blog"/>
+      <updated>2021-02-12T15:00:00.679Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>初投稿</p>
+          <p class="more">
+            <a href="/blog/hello-notion-blog">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/wais-iv</id>
+      <title>心理検査の結果と所感</title>
+      <link href="/blog/wais-iv"/>
+      <updated>2021-01-05T15:00:00.680Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>いい自己分析になった</p>
+          <p class="more">
+            <a href="/blog/wais-iv">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/think-of-sre</id>
+      <title>SREとして仕事をするときに考えていること</title>
+      <link href="/blog/think-of-sre"/>
+      <updated>2021-01-03T15:00:00.680Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>SREとして1年半働いてできてきた価値観のダンプ</p>
+          <p class="more">
+            <a href="/blog/think-of-sre">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/exit-ntt-tx</id>
+      <title>3年間ちょっと勤めたNTTテクノクロスを退職しました</title>
+      <link href="/blog/exit-ntt-tx"/>
+      <updated>2019-06-14T15:00:00.680Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>昔書いたやつ</p>
+          <p class="more">
+            <a href="/blog/exit-ntt-tx">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+    <entry>
+      <id>/blog/intro-skk</id>
+      <title>SEの生産性を改善するためのSKK入門</title>
+      <link href="/blog/intro-skk"/>
+      <updated>2018-12-20T15:00:00.680Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>SKKはいいぞ</p>
+          <p class="more">
+            <a href="/blog/intro-skk">Read more</a>
+          </p>
+        </div>
+      </content>
+      
+    </entry>
+  </feed>
