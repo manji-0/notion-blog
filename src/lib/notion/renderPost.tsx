@@ -223,9 +223,9 @@ const RenderPost = ({ post }) => {
                 <Img
                   unoptimized={true}
                   key={id}
-                  src={`/api/asset?assetUrl=${encodeURIComponent(
+                  src={`/api/asset/${id}?assetUrl=${encodeURIComponent(
                     display_source as string
-                  )}&blockId=${id}`}
+                  )}`}
                   width={width}
                   height={height}
                   layout="responsive"

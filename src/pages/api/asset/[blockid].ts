@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import getNotionAssetUrls from '../../lib/notion/getNotionAssetUrls'
-import { setHeaders, handleData, handleError } from '../../lib/notion/utils'
+import getNotionAssetUrls from '../../../lib/notion/getNotionAssetUrls'
+import { setHeaders, handleData, handleError } from '../../../lib/notion/utils'
 
 export default async function notionApi(
   req: NextApiRequest,
@@ -8,8 +8,9 @@ export default async function notionApi(
 ) {
   if (setHeaders(req, res)) return
   try {
-    const { assetUrl, blockId } = req.query as { [k: string]: string }
-
+    const blockId = req.url.split('?')[0].split('/')[3]
+    const { assetUrl } = req.query as { [k: string]: string }
+    
     if (!assetUrl || !blockId) {
       handleData(res, {
         status: 'error',
