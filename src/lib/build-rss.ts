@@ -1,7 +1,4 @@
-import { resolve } from 'path'
-import { writeFile } from './fs-helpers'
 import { renderToStaticMarkup } from 'react-dom/server'
-
 import { textBlock } from './notion/renderers'
 import getBlogIndex from './notion/getBlogIndex'
 import getNotionUsers from './notion/getNotionUsers'
@@ -36,11 +33,7 @@ function mapToEntry(post): string {
       <updated>${new Date(post.date).toJSON()}</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
-          ${renderToStaticMarkup(
-            post.Description
-              ? textBlock(post.Description, false, post.title + post.link)
-              : post.content
-          )}
+          <p> ${decode(post.Description)} </p>
           <p class="more">
             <a href="${post.link}">Read more</a>
           </p>
@@ -95,9 +88,8 @@ async function main() {
     post.date = post.Date
   })
 
-  const outputPath = './public/atom'
-  await writeFile(resolve(outputPath), createRSS(blogPosts))
-  console.log(`Atom feed file generated at \`${outputPath}\``)
+  const data = await createRSS(blogPosts)
+  return data
 }
 
 export default main

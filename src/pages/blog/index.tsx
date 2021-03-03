@@ -3,7 +3,6 @@ import Header from '../../components/header'
 
 import blogStyles from '../../styles/blog.module.css'
 import sharedStyles from '../../styles/shared.module.css'
-import BuildAtom from '../../lib/build-rss'
 
 import {
   getBlogLink,
@@ -17,7 +16,6 @@ export async function getStaticProps(): Promise<{
   props: { posts: any[] }
   revalidate: number
 }> {
-  BuildAtom()
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
