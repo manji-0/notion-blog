@@ -31,9 +31,17 @@ export default async function notionApi(
         })
       }
 
-      res.status(307)
-      res.setHeader('Location', signedUrls.pop())
-      res.end()
+      const content = await fetch(signedUrls[0])
+      const data = await content.blob()
+      const binary = Buffer.from(await data.arrayBuffer())
+
+      res.setHeader('content-type', content.headers.get('content-type'))
+      res.setHeader('content-length', content.headers.get('content-length'))
+      res.setHeader('accept-ranges', 'byte')
+      res.setHeader('last-modified', content.headers.get('last-modified'))
+      res.setHeader('cache-control', 'public, s-max-age=7200s, stale-while-revalidate')
+      res.status(200)
+      res.end(binary, "binary")
     }
   } catch (error) {
     handleError(res, error)
