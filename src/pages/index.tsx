@@ -46,10 +46,10 @@ const Default = () => (
     <div className={sharedStyles.layout}>
       <div className={contactStyles.avatar}>
         <Img
-          src="/avatar.png"
+          src="/avatar.webp"
           alt="avatar with Wataru Manji"
-          height="125"
-          width="125"
+          height="130"
+          width="130"
         />
       </div>
 

@@ -7,6 +7,6 @@ export default async function rss(
 ) {
     const data = await BuildAtom()
     res.status(200)
-    res.setHeader('Content-Type', 'text/xml')
+    res.setHeader('Content-Type', 'application/rss+xml')
     res.end(data.toString())
 }
