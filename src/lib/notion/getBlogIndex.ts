@@ -21,11 +21,13 @@ export default async function getBlogIndex() {
     try {
       const data = await rpc('loadPageChunk', {
         pageId: BLOG_INDEX_ID,
-        limit: 999, // TODO: figure out Notion's way of handling pagination
+        limit: 1, // TODO: figure out Notion's way of handling pagination
         cursor: { stack: [] },
         chunkNumber: 0,
         verticalColumns: false,
       })
+
+      console.log(data.recordMap.block)
 
       // Parse table with posts
       const tableBlock = values(data.recordMap.block).find(
