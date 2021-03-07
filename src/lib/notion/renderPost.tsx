@@ -138,7 +138,13 @@ const RenderPost = ({ post }) => {
               )
               break
             case 'table_of_contents':
+              break
             case 'collection_view':
+              console.log(value)
+              toRender.push(
+                <components.Table children={null} id={value.id} tableData={value.tableData} />
+              )
+              break
             case 'page':
               break
             case 'gist':

@@ -263,6 +263,28 @@ hr.article {
   margin-bottom: 1em;
 }
 
+table.article {
+  border-collapse: collapse;
+  border: 1px solid #CCC;
+  margin-left: auto;
+  margin-right: auto;
+}
+ 
+th, td {
+  padding: 5px 10px;
+  border: 1px solid #CCC;
+  font-size: 0.94rem;
+}
+ 
+th {
+  background: #EEE;
+}
+
+td {
+  font-weight: 400;
+  background: #fff;
+}
+
 .links {
   margin-top: var(--gap);
 }

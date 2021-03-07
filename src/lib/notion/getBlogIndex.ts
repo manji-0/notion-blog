@@ -27,8 +27,6 @@ export default async function getBlogIndex() {
         verticalColumns: false,
       })
 
-      console.log(data.recordMap.block)
-
       // Parse table with posts
       const tableBlock = values(data.recordMap.block).find(
         (block: any) => block.value.type === 'collection_view'
