@@ -270,18 +270,18 @@ table.article {
   margin-right: auto;
 }
  
-th, td {
+th.article, td.article {
   padding: 5px 10px;
   border: 1px solid #CCC;
   font-size: 0.94rem;
 }
  
-th {
+th.article {
   background: #EEE;
   color: #333;
 }
 
-td {
+td.article {
   font-weight: 400;
   background: #fff;
   color: #555;

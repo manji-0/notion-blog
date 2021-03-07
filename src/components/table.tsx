@@ -11,7 +11,7 @@ const Table = ({children, id, tableData={}}) => {
     const item = head.split("-")[1]
     heads.push(head)
     headsElement.push(
-      <th>{item}</th>
+      <th className="article">{item}</th>
     )
   })
 
@@ -20,12 +20,12 @@ const Table = ({children, id, tableData={}}) => {
 
     heads.forEach(head => {
       row.push(
-        <td>{tableData[slug][head]}</td>
+        <td className="article">{tableData[slug][head]}</td>
       )
     })
 
     rowsElement.push(
-      <tr key={slug}>
+      <tr key={slug} className="article">
         {row}
       </tr>
     )
@@ -33,7 +33,7 @@ const Table = ({children, id, tableData={}}) => {
 
   return (
     <table id={id} className="article">
-    <tr key={id}>
+    <tr key={id} className="article">
       {headsElement}
     </tr>
     {rowsElement}
