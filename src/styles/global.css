@@ -278,11 +278,13 @@ th, td {
  
 th {
   background: #EEE;
+  color: #333;
 }
 
 td {
   font-weight: 400;
   background: #fff;
+  color: #555;
 }
 
 .links {
